@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Achievements </title>
+    <style>
+        /* Body and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #6d123f;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 1.1em;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: #555;
+    border-radius: 4px;
+}
+
+/* Achievements Section Styling */
+.achievements-section {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #bba3ae;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.achievements-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.achievements-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Achievements Grid */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.achievement-card {
+    background: #f7fcff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.achievement-card h3 {
+    font-size: 1.6em;
+    margin: 20px 0 10px;
+    padding: 0 15px;
+    color: #333;
+}
+
+.achievement-card p {
+    font-size: 1em;
+    padding: 0 15px 20px;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card img {
+        height: 150px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Make Unity</h1>
+            <nav>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="donation.html">Donation</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="achievements-section">
+            <h2>Our Achievements</h2>
+            <p>We are proud of the milestones and accolades we have achieved through the years. Below are some of our most notable achievements:</p>
+
+            <div class="achievements-grid">
+                <!-- Achievement 1 -->
+                <div class="achievement-card">
+                    <img src="images/award1.jpg" alt="Achievement 1">
+                    <h3>Best Social Helping Foundation In The Year of 2023</h3>
+                    <p>Awarded by XYZ Association for excellence in organizing the Event of 2023.</p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="achievement-card">
+                    <img src="images/award2.jpg" alt="Achievement 2">
+                    <h3>Innovative Research Award</h3>
+                    <p>Received recognition for our groundbreaking research presented at the national conference.</p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="achievement-card">
+                    <img src="images/award3.jpg" alt="Achievement 3">
+                    <h3>Top Educational Event 2022</h3>
+                    <p>Honored as the best educational event for promoting science and innovation among young minds.</p>
+                </div>
+
+                <!-- Add more achievements as needed -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>Contact: contact@example.com</p>
+            <p>Address: 123 Symposium St., City, Country</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

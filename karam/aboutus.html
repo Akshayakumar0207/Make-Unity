@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Symposium</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #4d376d;
+    background-color: #b9adcf;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: #555;
+    border-radius: 4px;
+}
+
+/* About Us Section Styling */
+.aboutus {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.aboutus h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.aboutus p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+/* Keyframes for image animations */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Apply animation to the aboutus-item images */
+.aboutus-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    animation: zoomIn 0.5s ease forwards, bounce 1s ease forwards; /* Adding animations */
+    animation-delay: 0.2s; /* Delay for better effect */
+}
+
+.aboutus-item {
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.5s ease forwards; /* Fade in animation */
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Grid Layout for About Us Sections */
+.aboutus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* About Us Item Styling */
+.aboutus-item {
+    display: flex;
+    align-items: center;
+    background-color: #e6d1f2;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.aboutus-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.aboutus-info h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.aboutus-info p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .aboutus-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .aboutus-item img {
+        margin-bottom: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Make Unity</h1>
+            <nav>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="donation.html">Donation</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="aboutus">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Learn more about our team and foundation.</p>
+
+            <div class="aboutus-grid">
+                <!-- Section 1: Founder Image and Bio -->
+                <div class="aboutus-item">
+                    <img src="images/founder.jpg" alt="Founder Image">
+                    <div class="aboutus-info">
+                        <h3>Founder</h3>
+                        <p>John Doe, founder of the symposium, has over 20 years of experience in education and innovation. He has a passion for sharing knowledge and bringing communities together.</p>
+                    </div>
+                </div>
+
+                <!-- Section 2: Co-Founder Image and Bio -->
+                <div class="aboutus-item">
+                    <img src="images/cofounder.jpg" alt="Co-Founder Image">
+                    <div class="aboutus-info">
+                        <h3>Co-Founder</h3>
+                        <p>Jane Doe, co-founder of the foundation, has worked in the field of education for more than 15 years. She plays a key role in organizing and managing symposium events.</p>
+                    </div>
+                </div>
+
+                <!-- Section 3: Our Team Image and Bio -->
+                <div class="aboutus-item">
+                    <img src="images/team.jpg" alt="Our Team Image">
+                    <div class="aboutus-info">
+                        <h3>Our Team</h3>
+                        <p>Our team is composed of dedicated professionals from various fields including education, technology, and social work. Together, we are committed to providing impactful symposiums.</p>
+                    </div>
+                </div>
+
+                <!-- Section 4: Our Foundation Image and Details -->
+                <div class="aboutus-item">
+                    <img src="images/foundation.jpg" alt="Foundation Image">
+                    <div class="aboutus-info">
+                        <h3>Our Foundation</h3>
+                        <p>Our foundation was established in 2010 with the goal of promoting educational advancement, innovation, and knowledge sharing through global symposiums and events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>Contact: contact@example.com</p>
+            <p>Address: 123 Symposium St., City, Country</p>
+        </div>
+    </footer>
+    <!-- <script>
+        // Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').split(".html")[0];
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 80,  // Adjust offset for header
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+    </script> -->
+</body>
+</html>

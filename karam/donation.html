@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #273316;
+        background-color: #f4f4f4;
+    }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    header {
+        background: #333;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    header h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2em;
+    }
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 12px;
+        font-size: 1.1em;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+        background: #273316;
+        border-radius: 4px;
+    }
+    main {
+        padding: 20px 0;
+    }
+    .donation-section {
+        background-color: #F3D0B3;
+        color: #333;
+        text-align: center;
+        padding: 60px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .donation-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .donation-section p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    /* Star hover animation */
+    .donation-section button {
+        position: relative;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        color: #333;
+        background-color: #f4f4f4;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .donation-section button:hover {
+        background: #273316;
+        color: #fff;
+    }
+
+    .donation-section button::before, .donation-section button::after {
+        content: '★';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 2em;
+        color: #26efdb;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.5s, opacity 0.5s;
+    }
+    .star {
+    position: absolute;
+    font-size: 1.5em;
+    color: #26efdb;
+    opacity: 1;
+    pointer-events: none;  /* Prevent interaction with stars */
+}
+
+
+    .donation-section button:hover::before {
+        opacity: 1;
+        transform: translate(-150%, -150%) scale(1);
+    }
+
+    .donation-section button:hover::after {
+        opacity: 1;
+        transform: translate(150%, 150%) scale(1);
+    }
+
+    /* Footer Styling */
+    footer {
+        background: #333;
+        color: #FCFAEE;
+        text-align: center;
+        padding: 80px 0 200px;
+        margin-top: 40px;
+    }
+
+    footer p {
+        margin: 5px 0;
+        font-size: 1em;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        .donation-section h2 {
+            font-size: 2em;
+        }
+
+        .donation-section p {
+            font-size: 1em;
+        }
+
+        .donation-section button {
+            width: 100%;
+            font-size: 1em;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Make Unity</h1>
+            <nav>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="donation.html">Donation</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="donation-section">
+            <h2>Support Our Cause</h2>
+            <p>Your donations help us make a difference!</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScbiSZqaaEu0MOsBBYeDUivdwyXqCibrdxKsRTujvWWaHfwyQ/viewform?usp=sf_link">
+            <button>Donate Now</button>
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>Contact: contact@example.com</p>
+            <p>Address: 123 Symposium St., City, Country</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+    // Add event listener for the "Donate Now" button
+const donateButton = document.querySelector('.donation-section button');
+
+donateButton.addEventListener('click', function(event) {
+    event.preventDefault();  // Prevents default action if the button redirects
+    alert('Thank you for your interest in donating! You will be redirected to the donation form.');
+    
+    // Generate stars
+    createStars(event.clientX, event.clientY);
+    
+    // Redirect to the donation link after a brief delay
+    setTimeout(() => {
+        window.location.href = this.parentElement.getAttribute('href');  // Redirect to the donation link
+    }, 1000);  // Adjust the delay as needed
+});
+
+function createStars(x, y) {
+    for (let i = 0; i < 10; i++) {  // Change the number of stars as needed
+        const star = document.createElement('span');
+        star.classList.add('star');
+        star.textContent = '★';
+
+        // Set random position
+        star.style.left = `${x + (Math.random() * 50 - 25)}px`;
+        star.style.top = `${y + (Math.random() * 50 - 25)}px`;
+
+        document.body.appendChild(star);
+
+        // Animate star
+        setTimeout(() => {
+            star.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+            star.style.transform = `translateY(-100px) scale(1.5)`;  // Adjust upward movement
+            star.style.opacity = '0';
+        }, 0);
+
+        // Remove star after animation
+        setTimeout(() => {
+            document.body.removeChild(star);
+        }, 1000);  // Match with the duration of the animation
+    }
+}
+
+    </script>
+</body>
+</html>
